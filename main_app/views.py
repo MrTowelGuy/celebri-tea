@@ -8,4 +8,5 @@ def home(request):
   return HttpResponse('<h1>okUUURRR</h1>')
 
 def about(request):
-    return HttpResponse('<h1>spill some tea</h1>')
+    return render(request, 'about.html')
+
