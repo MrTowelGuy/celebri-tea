@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %} {% block content %}
+
+<h1>Honey, The Tea is Hot!</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ tea.title }}</span>
+    <p>Type: {{ tea.tight }}</p>
+    <p>Description: {{ tea.description }}</p>
+    {% if tea.witnesses > 10 %}
+    <p>Witnesses: {{ tea.witnesses }}</p>
+    {% else %}
+    <p>Only {{ tea.witnesses }} witnesses?</p>
+    {% endif %}
+    <div class="card-action">
+        <a href="{% url 'tea_update' tea.id %}">Edit</a>
+        <a href="{% url 'tea_delete' tea.id %}">Delete</a>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -5,11 +5,13 @@
 
 {% for tea in tea %}
 <div class="card">
+  <a href="{% url 'detail' tea.id %}">
   <div class="card-content">
     <span class="card-title">{{ tea.title }}</span>
     <p>Type of Tea: {{ tea.type }}</p>
     <p>So, what happened?: {{ tea.description }}</p>
     <p>How many witnesses were there?: {{ tea.witnesses }}</p>
   </div>
+  </a>
 </div>
 {% endfor %} {% endblock %}
